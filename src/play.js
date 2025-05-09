@@ -1,8 +1,19 @@
+
 const data = require("../words.json")
 
 
+class Hangman {
+    constructor(parameters) {
+        
+    }
+
+    clickHandler(number){
+        alert("YYYYEEEEEEEESSSSSSSSSSSSSSSS")
+    }
+}
+
 function hang(){
-    let words = data.ProgrammingLanguages[5]
+    let words = data.ProgrammingLanguages[2]
     let correctGuess = document.getElementById("play-area")
 
     correctGuess.innerHTML = words
@@ -10,18 +21,11 @@ function hang(){
 
 
 // document.onload
-hang()
+// hang()
 
 
 
-
-
-
-
-
-
-
-
+module.exports = {Hangman}
 
 
 

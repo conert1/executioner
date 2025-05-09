@@ -4,7 +4,7 @@ module.exports = {
     mode: "development",
     entry: {
         
-        main: path.resolve(__dirname, 'src/play.js'),
+        main: path.resolve(__dirname, 'src/initialize_game'),
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

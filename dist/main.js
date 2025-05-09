@@ -9,13 +9,23 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/initialize_game.js":
+/*!********************************!*\
+  !*** ./src/initialize_game.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const {Hangman} = __webpack_require__(/*! ./play */ \"./src/play.js\")\n\nlet hang = new Hangman\nconst elements = document.querySelectorAll(\"#input > div\");\n  elements.forEach((element, index) => {\n    element.addEventListener(\"click\", () => {\n      hang.clickHandler(index + 1);\n    });\n  });\n\n//# sourceURL=webpack://executioner/./src/initialize_game.js?");
+
+/***/ }),
+
 /***/ "./src/play.js":
 /*!*********************!*\
   !*** ./src/play.js ***!
   \*********************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const data = __webpack_require__(/*! ../words.json */ \"./words.json\")\n\n\nfunction hang(){\n    let words = data.ProgrammingLanguages[5]\n    let correctGuess = document.getElementById(\"play-area\")\n\n    correctGuess.innerHTML = words\n}\n\n\n// document.onload\nhang()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// let ran = Math.floor(Math.random() * 50)\n// console.log(ran)\n// console.log(data.movies[ran])\n// console.log(data.techCompanies[ran])\n// console.log(data.ProgrammingLanguages[ran])\n// console.log(data.mythicalCreatures[ran])\n// console.log(data.cartoonCharacters[ran])\n// console.log(data.funActivities[ran])\n// console.log(data.produce[ran])\n// console.log(data.animals[ran])\n// console.log(data.periodicTableElements[ran])\n// console.log(data.planets[ran])\n// console.log(data.body_parts[ran])\n// console.log(data.scientists[ran])\n// console.log(data.countries[ran])\n// console.log(data.cities[ran])\n// console.log(data.tv_shows[ran])\n// console.log(data.famous_people[ran])\n\n//# sourceURL=webpack://executioner/./src/play.js?");
+eval("\nconst data = __webpack_require__(/*! ../words.json */ \"./words.json\")\n\n\nclass Hangman {\n    constructor(parameters) {\n        \n    }\n\n    clickHandler(number){\n        alert(\"YYYYEEEEEEEESSSSSSSSSSSSSSSS\")\n    }\n}\n\nfunction hang(){\n    let words = data.ProgrammingLanguages[2]\n    let correctGuess = document.getElementById(\"play-area\")\n\n    correctGuess.innerHTML = words\n}\n\n\n// document.onload\n// hang()\n\n\n\nmodule.exports = {Hangman}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// let ran = Math.floor(Math.random() * 50)\n// console.log(ran)\n// console.log(data.movies[ran])\n// console.log(data.techCompanies[ran])\n// console.log(data.ProgrammingLanguages[ran])\n// console.log(data.mythicalCreatures[ran])\n// console.log(data.cartoonCharacters[ran])\n// console.log(data.funActivities[ran])\n// console.log(data.produce[ran])\n// console.log(data.animals[ran])\n// console.log(data.periodicTableElements[ran])\n// console.log(data.planets[ran])\n// console.log(data.body_parts[ran])\n// console.log(data.scientists[ran])\n// console.log(data.countries[ran])\n// console.log(data.cities[ran])\n// console.log(data.tv_shows[ran])\n// console.log(data.famous_people[ran])\n\n//# sourceURL=webpack://executioner/./src/play.js?");
 
 /***/ }),
 
@@ -61,7 +71,7 @@ eval("module.exports = /*#__PURE__*/JSON.parse('{\"movies\":[\"The Godfather\",\
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/play.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/initialize_game.js");
 /******/ 	
 /******/ })()
 ;
