@@ -1,32 +1,15 @@
-alert("hello")
 const data = require("../words.json")
 
-let word = "hello"
 
 function hang(){
-    let play = true
-    let letter
-    while(play == true){
-        // console.log("guess the word")
-        // letter = 
-        // letter = process.argv.slice(2); // Remove the first two elements
-        // console.log('Arguments:', letter);
+    let words = data.ProgrammingLanguages[5]
+    let correctGuess = document.getElementById("play-area")
 
-        // console.log("hello")
-
-        process.stdout.write('Enter your name: ');
-
-        process.stdin.on('data', (data) => {
-            const name = data.toString().trim();
-            console.log(`Hello, ${name}!`);
-            process.exit(); // Exit the process after receiving input
-          });
-    }
+    correctGuess.innerHTML = words
 }
 
 
-
-
+// document.onload
 hang()
 
 
