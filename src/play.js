@@ -2,22 +2,59 @@
 const data = require("../words.json")
 
 
+// class Hangman {
+//     constructor(word) {
+//        this.word= word 
+//     }
+
+//     clickHandler(number){
+//         console.log(this.word)   
+//         console.log(handler()) 
+//     }
+    
+    
+// }
+
 class Hangman {
-    constructor(parameters) {
-        
+    constructor(word) {
+        this.word = word;
+        this.initListeners(); // set up click events
     }
 
-    clickHandler(number){
-        alert("YYYYEEEEEEEESSSSSSSSSSSSSSSS")
+    initListeners() {
+        document.querySelectorAll('.key').forEach(key => {
+            key.addEventListener('click', (event) => this.clickHandler(event));
+        });
+    }
+
+    clickHandler(event) {
+        const letter = event.target.textContent;
+        console.log('Word:', this.word);
+        console.log('Clicked letter:', letter);
+        // You can add more logic here, e.g. checking if the letter is in this.word
     }
 }
 
-function hang(){
-    let words = data.ProgrammingLanguages[2]
-    let correctGuess = document.getElementById("play-area")
 
-    correctGuess.innerHTML = words
-}
+// function hang(){
+//     let words = data.ProgrammingLanguages[2]
+//     let correctGuess = document.getElementById("play-area")
+
+//     correctGuess.innerHTML = words
+// }
+
+// function handler(event) {
+//     // Return or log the letter that was clicked
+//     const letter = event.target.textContent;
+//     console.log(letter);
+//     return letter;
+//   }
+  
+//   // Attach the handler to all elements with class "key"
+//   document.querySelectorAll('.key').forEach(key => {
+//     key.addEventListener('click', handler);
+//   });
+  
 
 
 // document.onload

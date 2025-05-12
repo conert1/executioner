@@ -13,9 +13,9 @@
 /*!********************************!*\
   !*** ./src/initialize_game.js ***!
   \********************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const {Hangman} = __webpack_require__(/*! ./play */ \"./src/play.js\")\n\nlet hang = new Hangman\nconst elements = document.querySelectorAll(\"#input > div\");\n  elements.forEach((element, index) => {\n    element.addEventListener(\"click\", () => {\n      hang.clickHandler(index + 1);\n    });\n  });\n\n//# sourceURL=webpack://executioner/./src/initialize_game.js?");
+eval("const {Hangman} = __webpack_require__(/*! ./play */ \"./src/play.js\")\nconst wordToGuess = __webpack_require__(/*! ../words.json */ \"./words.json\")\n\nfunction chosenWord(){\n  return wordToGuess.ProgrammingLanguages[1]\n}\n\n\nlet hang = new Hangman(chosenWord())\n// const elements = document.querySelectorAll(\"#input > div\");\n//   elements.forEach((element, index) => {\n//     element.addEventListener(\"click\", () => {\n//       hang.clickHandler(index+1);\n//     });\n//   });\n\n\n  // function handler(event) {\n  //   // Return or log the letter that was clicked\n  //   const letter = event.target.textContent;\n  //   console.log(letter);\n  //   return letter;\n  // }\n  \n  // // Attach the handler to all elements with class \"key\"\n  // document.querySelectorAll('.key').forEach(key => {\n  //   key.addEventListener('click', handler);\n  // });\n  \n \n\n  chosenWord()\n\n  module.exports={chosenWord}\n\n//# sourceURL=webpack://executioner/./src/initialize_game.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("const {Hangman} = __webpack_require__(/*! ./play */ \"./src/play.js\")\n\n
   \*********************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("\nconst data = __webpack_require__(/*! ../words.json */ \"./words.json\")\n\n\nclass Hangman {\n    constructor(parameters) {\n        \n    }\n\n    clickHandler(number){\n        alert(\"YYYYEEEEEEEESSSSSSSSSSSSSSSS\")\n    }\n}\n\nfunction hang(){\n    let words = data.ProgrammingLanguages[2]\n    let correctGuess = document.getElementById(\"play-area\")\n\n    correctGuess.innerHTML = words\n}\n\n\n// document.onload\n// hang()\n\n\n\nmodule.exports = {Hangman}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// let ran = Math.floor(Math.random() * 50)\n// console.log(ran)\n// console.log(data.movies[ran])\n// console.log(data.techCompanies[ran])\n// console.log(data.ProgrammingLanguages[ran])\n// console.log(data.mythicalCreatures[ran])\n// console.log(data.cartoonCharacters[ran])\n// console.log(data.funActivities[ran])\n// console.log(data.produce[ran])\n// console.log(data.animals[ran])\n// console.log(data.periodicTableElements[ran])\n// console.log(data.planets[ran])\n// console.log(data.body_parts[ran])\n// console.log(data.scientists[ran])\n// console.log(data.countries[ran])\n// console.log(data.cities[ran])\n// console.log(data.tv_shows[ran])\n// console.log(data.famous_people[ran])\n\n//# sourceURL=webpack://executioner/./src/play.js?");
+eval("\nconst data = __webpack_require__(/*! ../words.json */ \"./words.json\")\n\n\n// class Hangman {\n//     constructor(word) {\n//        this.word= word \n//     }\n\n//     clickHandler(number){\n//         console.log(this.word)   \n//         console.log(handler()) \n//     }\n    \n    \n// }\n\nclass Hangman {\n    constructor(word) {\n        this.word = word;\n        this.initListeners(); // set up click events\n    }\n\n    initListeners() {\n        document.querySelectorAll('.key').forEach(key => {\n            key.addEventListener('click', (event) => this.clickHandler(event));\n        });\n    }\n\n    clickHandler(event) {\n        const letter = event.target.textContent;\n        console.log('Word:', this.word);\n        console.log('Clicked letter:', letter);\n        // You can add more logic here, e.g. checking if the letter is in this.word\n    }\n}\n\n\n// function hang(){\n//     let words = data.ProgrammingLanguages[2]\n//     let correctGuess = document.getElementById(\"play-area\")\n\n//     correctGuess.innerHTML = words\n// }\n\n// function handler(event) {\n//     // Return or log the letter that was clicked\n//     const letter = event.target.textContent;\n//     console.log(letter);\n//     return letter;\n//   }\n  \n//   // Attach the handler to all elements with class \"key\"\n//   document.querySelectorAll('.key').forEach(key => {\n//     key.addEventListener('click', handler);\n//   });\n  \n\n\n// document.onload\n// hang()\n\n\n\nmodule.exports = {Hangman}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// let ran = Math.floor(Math.random() * 50)\n// console.log(ran)\n// console.log(data.movies[ran])\n// console.log(data.techCompanies[ran])\n// console.log(data.ProgrammingLanguages[ran])\n// console.log(data.mythicalCreatures[ran])\n// console.log(data.cartoonCharacters[ran])\n// console.log(data.funActivities[ran])\n// console.log(data.produce[ran])\n// console.log(data.animals[ran])\n// console.log(data.periodicTableElements[ran])\n// console.log(data.planets[ran])\n// console.log(data.body_parts[ran])\n// console.log(data.scientists[ran])\n// console.log(data.countries[ran])\n// console.log(data.cities[ran])\n// console.log(data.tv_shows[ran])\n// console.log(data.famous_people[ran])\n\n//# sourceURL=webpack://executioner/./src/play.js?");
 
 /***/ }),
 
@@ -70,7 +70,7 @@ eval("module.exports = /*#__PURE__*/JSON.parse('{\"movies\":[\"The Godfather\",\
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/initialize_game.js");
 /******/ 	
 /******/ })()
