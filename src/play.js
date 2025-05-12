@@ -1,71 +1,33 @@
-
-const data = require("../words.json")
+const data = require("../words.json");
 
 class Hangman {
-    constructor(word, list) {
-        this.word = word;
-        this.initListeners(); // set up click events
-        this.list = list
+  constructor(word, list) {
+    this.word = word;
+    this.initListeners(); // set up click events
+    this.list = list;
+  }
 
+  initListeners() {
+    document.querySelectorAll(".key").forEach((key) => {
+      key.addEventListener("click", (event) => this.clickHandler(event));
+    });
+  }
+
+  clickHandler(event) {
+    const letter = event.target.textContent.toUpperCase();
+
+    for (let i = 0; i < this.word.split("").length; i++) {
+      console.log(letter + "   aaannnddd   " + this.word.split("")[i]);
+      if (letter == this.word.split("")[i].toUpperCase()) {
+        console.log(this.list);
+        this.list[i] = letter;
+      }
     }
-
-    initListeners() {
-        document.querySelectorAll('.key').forEach(key => {
-            key.addEventListener('click', (event) => this.clickHandler(event));
-        });
-    }
-
-    clickHandler(event) {
-        const letter = event.target.textContent.toUpperCase();
-        // console.log('Word:', this.word);
-        // console.log('Clicked letter:', letter);
-
-       for(let i=0; i<this.word.split("").length; i++){
-        console.log(letter + "   aaannnddd   "+ this.word.split("")[i])
-        if(letter == this.word.split("")[i].toUpperCase()){
-            console.log(this.list)
-            this.list[i] = letter 
-        }
-       }
-       document.getElementById("play-area").innerHTML = this.list
-
-    }
-
-    display(){
-        
-    }
+    document.getElementById("play-area").innerHTML = this.list;
+  }
 }
 
-
-// function hang(){
-//     let words = data.ProgrammingLanguages[2]
-//     let correctGuess = document.getElementById("play-area")
-
-//     correctGuess.innerHTML = words
-// }
-
-
-
-// hang()
-
-
-
-module.exports = {Hangman}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = { Hangman };
 
 // let ran = Math.floor(Math.random() * 50)
 // console.log(ran)

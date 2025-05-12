@@ -1,42 +1,23 @@
-const {Hangman} = require("./play")
-const wordToGuess = require("../words.json")
+const { Hangman } = require("./play");
+const wordToGuess = require("../words.json");
 
-function chosenWord(){
-  return wordToGuess.ProgrammingLanguages[1]
+function chosenWord() {
+  return wordToGuess.cartoonCharacters[2];
 }
 
-function initializePlay(){
-  let number = []
-  for(let i=0; i<chosenWord().length; i++){
-    number.push("_")
+function initializePlay() {
+  let number = [];
+  for (let i = 0; i < chosenWord().length; i++) {
+    // if there is a space then replace the "_" with an empty space
+    // to see win check if there is an "_" in the game if not then it is a WIN!!! 
+    number.push("_");
   }
-  document.getElementById("play-area").innerHTML = number
-  return number
+  document.getElementById("play-area").innerHTML = number;
+  return number;
 }
-initializePlay()
-let hang = new Hangman(chosenWord(), initializePlay())
-// const elements = document.querySelectorAll("#input > div");
-//   elements.forEach((element, index) => {
-//     element.addEventListener("click", () => {
-//       hang.clickHandler(index+1);
-//     });
-//   });
+initializePlay();
+let hang = new Hangman(chosenWord(), initializePlay());
 
+chosenWord();
 
-  // function handler(event) {
-  //   // Return or log the letter that was clicked
-  //   const letter = event.target.textContent;
-  //   console.log(letter);
-  //   return letter;
-  // }
-  
-  // // Attach the handler to all elements with class "key"
-  // document.querySelectorAll('.key').forEach(key => {
-  //   key.addEventListener('click', handler);
-  // });
-  
- 
-
-  chosenWord()
-
-  module.exports={chosenWord, initializePlay}
+module.exports = { chosenWord, initializePlay };
