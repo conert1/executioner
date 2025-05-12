@@ -5,8 +5,16 @@ function chosenWord(){
   return wordToGuess.ProgrammingLanguages[1]
 }
 
-
-let hang = new Hangman(chosenWord())
+function initializePlay(){
+  let number = []
+  for(let i=0; i<chosenWord().length; i++){
+    number.push("_")
+  }
+  document.getElementById("play-area").innerHTML = number
+  return number
+}
+initializePlay()
+let hang = new Hangman(chosenWord(), initializePlay())
 // const elements = document.querySelectorAll("#input > div");
 //   elements.forEach((element, index) => {
 //     element.addEventListener("click", () => {
@@ -31,4 +39,4 @@ let hang = new Hangman(chosenWord())
 
   chosenWord()
 
-  module.exports={chosenWord}
+  module.exports={chosenWord, initializePlay}

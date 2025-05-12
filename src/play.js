@@ -1,24 +1,12 @@
 
 const data = require("../words.json")
 
-
-// class Hangman {
-//     constructor(word) {
-//        this.word= word 
-//     }
-
-//     clickHandler(number){
-//         console.log(this.word)   
-//         console.log(handler()) 
-//     }
-    
-    
-// }
-
 class Hangman {
-    constructor(word) {
+    constructor(word, list) {
         this.word = word;
         this.initListeners(); // set up click events
+        this.list = list
+
     }
 
     initListeners() {
@@ -28,10 +16,23 @@ class Hangman {
     }
 
     clickHandler(event) {
-        const letter = event.target.textContent;
-        console.log('Word:', this.word);
-        console.log('Clicked letter:', letter);
-        // You can add more logic here, e.g. checking if the letter is in this.word
+        const letter = event.target.textContent.toUpperCase();
+        // console.log('Word:', this.word);
+        // console.log('Clicked letter:', letter);
+
+       for(let i=0; i<this.word.split("").length; i++){
+        console.log(letter + "   aaannnddd   "+ this.word.split("")[i])
+        if(letter == this.word.split("")[i].toUpperCase()){
+            console.log(this.list)
+            this.list[i] = letter 
+        }
+       }
+       document.getElementById("play-area").innerHTML = this.list
+
+    }
+
+    display(){
+        
     }
 }
 
@@ -43,21 +44,8 @@ class Hangman {
 //     correctGuess.innerHTML = words
 // }
 
-// function handler(event) {
-//     // Return or log the letter that was clicked
-//     const letter = event.target.textContent;
-//     console.log(letter);
-//     return letter;
-//   }
-  
-//   // Attach the handler to all elements with class "key"
-//   document.querySelectorAll('.key').forEach(key => {
-//     key.addEventListener('click', handler);
-//   });
-  
 
 
-// document.onload
 // hang()
 
 
