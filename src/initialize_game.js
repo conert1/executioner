@@ -2,7 +2,7 @@ const { Hangman } = require("./play");
 const wordToGuess = require("../words.json");
 
 function chosenWord() {
-  return wordToGuess.cartoonCharacters[2];
+  return wordToGuess.techCompanies[0];
 }
 
 function initializePlay() {
@@ -10,9 +10,14 @@ function initializePlay() {
   for (let i = 0; i < chosenWord().length; i++) {
     // if there is a space then replace the "_" with an empty space
     // to see win check if there is an "_" in the game if not then it is a WIN!!! 
-    number.push("_");
+    if(chosenWord()[i] == " "){
+      number.push(" ")
+    }else{
+      number.push("_");
+    }
+    
   }
-  document.getElementById("play-area").innerHTML = number;
+  document.getElementById("play-area").innerHTML = number.join("");
   return number;
 }
 initializePlay();
