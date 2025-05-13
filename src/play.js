@@ -20,9 +20,11 @@ class Hangman {
 
     for (let i = 0; i < this.word.split("").length; i++) {
       if (letter == this.word.split("")[i].toUpperCase()) {
-        console.log(this.list);
         this.list[i] = letter;
         this.match=true
+        // document.getElementById(letter).style.display = "none"
+        document.getElementById(letter)?.classList.add("fade-out");
+
       }
     }
     document.getElementById("play-area").innerHTML = this.list.join("");

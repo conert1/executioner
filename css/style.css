@@ -33,3 +33,10 @@ body{
   .key:hover {
     background-color: #ddd;
   }
+
+  .key.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    visibility: hidden; /* Keeps layout space */
+  }
