@@ -2,7 +2,20 @@ const { Hangman } = require("./play");
 const wordToGuess = require("../words.json");
 
 function chosenWord() {
-  return wordToGuess.techCompanies[0];
+  // themeSelector()
+  //choose topic
+  let guess = Math.floor(Math.random() * Object.keys(wordToGuess.technology).length)
+  console.log("number of items  =  " +Object.keys(wordToGuess.technology).length)
+  console.log("guess       " + guess)
+  //choose word from the topic
+  let wordGuessNumber = Math.floor(Math.random() * Object.keys(wordToGuess.technology).length) 
+  // let actualWord = 
+  console.log(wordToGuess.technology)
+  return wordToGuess.technology.techCompanies[guess];
+}
+function themeSelector(theme){
+
+  return selected_theme
 }
 
 function initializePlay() {
@@ -15,7 +28,6 @@ function initializePlay() {
     }else{
       number.push("_");
     }
-    
   }
   document.getElementById("play-area").innerHTML = number.join("");
   return number;
