@@ -24,6 +24,8 @@ class Hangman {
         this.match=true
         // document.getElementById(letter).style.display = "none"
         document.getElementById(letter)?.classList.add("fade-out");
+      }else{
+        document.getElementById(letter)?.classList.add("fade-out");
       }
     }
     document.getElementById("play-area").innerHTML = this.list.join("");

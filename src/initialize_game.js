@@ -37,4 +37,17 @@ let hang = new Hangman(chosenWord(), initializePlay());
 
 chosenWord();
 
+document.querySelectorAll("#theme button").forEach(button => {
+  button.addEventListener("click", () => {
+    const theme = button.id; // e.g., "technology"
+    const selectedTheme = themeSelector(theme);
+
+    const { word, display } = initializePlay(selectedTheme);
+    let hang = new Hangman(word, display);
+
+    // Optionally store hang for future gameplay input
+    window.currentHangmanGame = hang;
+  });
+});
+
 module.exports = { chosenWord, initializePlay };
