@@ -1,7 +1,8 @@
 const data = require("../words.json");
 
 class Hangman {
-  constructor(word, list) {
+  constructor(word, list, globalTheme) {
+    this.globalTheme = globalTheme
     this.word = word;
     this.initListeners(); // set up click events
     this.list = list;
