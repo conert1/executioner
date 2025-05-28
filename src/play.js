@@ -6,7 +6,7 @@ class Hangman {
     this.word = word;
     this.initListeners(); // set up click events
     this.list = list;
-    this.turns = 7;
+    this.turns = 6;
     this.match = false
   }
 
@@ -15,7 +15,14 @@ class Hangman {
       key.addEventListener("click", (event) => this.clickHandler(event));
     });
   }
+  buttons(){
+    document.getElementById('restartW').addEventListener('click', function () {
+    window.location.href = "index.html"
+    alert("should be moving")
+  });
+  }
 
+  
   clickHandler(event) {
     const letter = event.target.textContent.toUpperCase();
 
@@ -31,10 +38,12 @@ class Hangman {
     }
     document.getElementById("play-area").innerHTML = this.list.join("");
     if (!this.list.includes("_")) {
-      this.gameWon()
+      // this.gameWon()
+      window.location.href = "game_won.html";
     }
     if(this.turns <=0){
-      this.gameOver()
+      // this.gameOver()
+      window.location.href = "game_lost.html";
     }
     if(this.match == false){
       this.turns--

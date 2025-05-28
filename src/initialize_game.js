@@ -1,6 +1,13 @@
 const { Hangman } = require("./play");
 const wordToGuess = require("../words.json");
 
+window.onload = function() {
+      document.getElementById("hang-graphics").style.display = "none";
+      document.getElementById("play-area").style.display = "none";
+      document.getElementById("input").style.display = "none";
+      document.getElementById("global-theme").style.display = "none";
+    };
+
 let globalTheme;
 
 function themeSelector(theme) {
@@ -24,12 +31,14 @@ function initializePlay(selectedTheme) {
     }
   }
   document.getElementById("play-area").innerHTML = number.join("");
-  document.getElementById("global-theme").innerHTML = globalTheme;
+  document.getElementById("global-theme").innerHTML = globalTheme + "remember to remove ==" + selectedTheme;
   return number;
 }
 
+  
 document.querySelectorAll("#theme button").forEach((button) => {
   button.addEventListener("click", () => {
+
     const theme = button.id;
     const selectedTheme = themeSelector(theme);
 
@@ -38,6 +47,13 @@ document.querySelectorAll("#theme button").forEach((button) => {
 
     // Optionally store hang for future gameplay input
     window.currentHangmanGame = hang;
+    
+    document.getElementById("theme").style.display = "none"
+    document.getElementById("hang-graphics").style.display = "block";
+    document.getElementById("play-area").style.display = "block";
+    document.getElementById("global-theme").style.display = "block";
+    document.getElementById("input").style.display = "block";
+
   });
 });
 
