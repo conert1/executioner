@@ -6,6 +6,9 @@ window.onload = function() {
       document.getElementById("play-area").style.display = "none";
       document.getElementById("input").style.display = "none";
       document.getElementById("global-theme").style.display = "none";
+      document.getElementById("game-lost").style.display = "none";
+      document.getElementById("game-won").style.display = "none";
+
     };
 
 let globalTheme;
