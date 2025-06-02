@@ -1,5 +1,5 @@
 body{
-
+  text-align: center;
 }
 
 #input {
@@ -10,7 +10,7 @@ body{
     margin: 0 auto;
     font-family: sans-serif;
   }
-
+/* 
   .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
@@ -38,5 +38,55 @@ body{
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
-    visibility: hidden; /* Keeps layout space */
+    visibility: hidden;
+  } */
+
+
+  .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.key {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.key:hover {
+  background-color: #ddd;
+}
+
+.key.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  visibility: hidden; /* Keeps layout space */
+}
+
+/* 🔽 Responsive tweak for small screens */
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    gap: 3px;
   }
+
+  .key {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+
+  /* Remove row paddings for tighter layout */
+  .row[style*="padding-left"] {
+    padding-left: 0 !important;
+  }
+}
