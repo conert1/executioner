@@ -4,12 +4,13 @@ class Hangman {
   constructor(word, list, globalTheme) {
     this.globalTheme = globalTheme;
     this.word = word;
-    this.initListeners(); // set up click events
+    this.initListeners(); 
     this.list = list;
     this.turns = 6;
     this.match = false;
   }
 
+  // event listeners for the buttons(letters)
   initListeners() {
     document.querySelectorAll(".key").forEach((key) => {
       key.addEventListener("click", (event) => this.clickHandler(event));
