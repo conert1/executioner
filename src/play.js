@@ -37,7 +37,37 @@ class Hangman {
       this.gameOver();
     }
     if (this.match == false) {
+      
       this.turns--;
+      switch(this.turns){
+        case 5:
+          console.log(this.turns)
+            document.getElementById("pole").style.display = "block";
+            break
+        case 4:
+            document.getElementById("stool").style.display = "block";
+            break
+        case 3:
+            document.getElementById("rope").style.display = "block";
+            break
+        case 2:
+          console.log(this.turns)
+            document.getElementById("head").style.display = "block";
+            break
+        case 1:
+          console.log(this.turns)
+            document.getElementById("bbody").style.display = "block";
+            break
+        case 0:
+          console.log(this.turns)
+            document.getElementById("legs").style.display = "block";
+            break
+        case 5:
+          console.log(this.turns)
+            document.getElementById("kick-chair").style.display = "block";
+            break
+ 
+      }
     }
     this.match = false;
   }

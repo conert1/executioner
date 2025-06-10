@@ -1,5 +1,6 @@
 body{
   text-align: center;
+  height: 100vh;
 }
 
 #input {
@@ -89,4 +90,49 @@ body{
   .row[style*="padding-left"] {
     padding-left: 0 !important;
   }
+
+}
+
+
+/* #hang-graphics{
+  text-align: center;
+  height: 40%;
+  background-color: aqua;
+  color: blueviolet;
+}
+
+.pole{
+  height: 500px;
+  width: 500px;
+  background-color: aqua;
+  color: blueviolet;
+}
+  
+
+*/
+
+
+#hang-graphics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: flex-start; 
+  height: 60vh;
+  padding-top: 30px;
+  background-color: #f8f8f8;
+}
+
+#pole,
+#stool,
+#rope,
+#head,
+#bbody,
+#arms,
+#legs {
+  display: block;
+    /* Controls how big it gets on large screens */
+  width: 30vw;          /* Responsive scaling — 20% of the viewport width */
+  height: 10vh;         /* Keep aspect ratio */
+  margin: 0 auto;       /* Center horizontally */
+  padding-top: 0px; 
 }

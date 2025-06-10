@@ -57,6 +57,15 @@ document.querySelectorAll("#theme button").forEach((button) => {
     document.getElementById("global-theme").style.display = "block";
     document.getElementById("input").style.display = "block";
 
+    // hangman image
+        document.getElementById("pole").style.display = "none"
+        document.getElementById("stool").style.display = "none"
+        document.getElementById("rope").style.display = "none"
+    document.getElementById("head").style.display = "none"
+    document.getElementById("bbody").style.display = "none"
+    document.getElementById("legs").style.display = "none"
+    document.getElementById("kick-chair").style.display = "none"
+
   });
 });
 
