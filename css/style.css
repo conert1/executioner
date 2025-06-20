@@ -11,37 +11,6 @@ body{
     margin: 0 auto;
     font-family: sans-serif;
   }
-/* 
-  .row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-    justify-content: center;
-    gap: 5px;
-  }
-
-  .key {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    text-align: center;
-    padding: 10px 0;
-    cursor: pointer;
-    user-select: none;
-    font-weight: bold;
-    transition: background-color 0.2s;
-  }
-
-  .key:hover {
-    background-color: #ddd;
-  }
-
-  .key.fade-out {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-    visibility: hidden;
-  } */
-
 
   .row {
   display: grid;
@@ -94,24 +63,6 @@ body{
 }
 
 
-/* #hang-graphics{
-  text-align: center;
-  height: 40%;
-  background-color: aqua;
-  color: blueviolet;
-}
-
-.pole{
-  height: 500px;
-  width: 500px;
-  background-color: aqua;
-  color: blueviolet;
-}
-  
-
-*/
-
-
 #hang-graphics {
   display: flex;
   flex-direction: column;
@@ -120,14 +71,29 @@ body{
   height: 60vh;
   padding-top: 30px;
   background-color: #f8f8f8;
+  position: relative;
 }
 
+
+#stool {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 200px;
+  /* background-image: url('../pics/rope.png'); */
+  background-size: cover;
+  background-position: center;
+  
+}
+
+
 #pole,
-#stool,
 #rope,
 #head,
 #bbody,
-#arms{
+#legs{
   /* display: block; */
     /* Controls how big it gets on large screens */
   width: 30vw;          /* Responsive scaling — 20% of the viewport width */
@@ -138,18 +104,19 @@ body{
   
 }
 
-#legs{
-width: 30vw;          /* Responsive scaling — 20% of the viewport width */
-  height: 10vh;         /* Keep aspect ratio */
-  margin: 0 auto;       /* Center horizontally */
+/* #legs{
+width: 30vw;         
+  height: 10vh;         
+  margin: 0 auto;       
   padding-top: -10px; 
   margin-top: -0.5%;
   background-color: wheat;
+  position: absolute;
   
-}
+} */
 
-  #stool {
-      /* position: absolute; */
+  /* #stool {
+     
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
@@ -166,12 +133,12 @@ width: 30vw;          /* Responsive scaling — 20% of the viewport width */
       width: 4px;
       height: 20px;
       background-color: #444;
-    }
+    } */
 
-    #stool::before {
+    /* #stool::before {
       left: 0;
     }
 
     #stool::after {
       right: 0;
-    }
+    } */
