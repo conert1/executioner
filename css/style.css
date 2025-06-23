@@ -75,20 +75,20 @@ body{
 }
 
 
-#stool {
+/* #stool {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 40px;
   height: 200px;
-  /* background-image: url('../pics/rope.png'); */
   background-size: cover;
   background-position: center;
   
-}
+} */
 
-
+#legs2,
+#stool,
 #pole,
 #rope,
 #head,
@@ -100,7 +100,7 @@ body{
   height: 10vh;         /* Keep aspect ratio */
   margin: 0 auto;       /* Center horizontally */
   padding-top: 0px; 
-  background-color: wheat;
+  /* background-color: wheat; */
   
 }
 

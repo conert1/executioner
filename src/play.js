@@ -33,7 +33,7 @@ class Hangman {
     if (!this.list.includes("_")) {
       this.gameWon();
     }
-    if (this.turns <= 0) {
+    if (this.turns <= 1) {
       this.gameOver();
     }
     if (this.match == false) {
@@ -42,21 +42,23 @@ class Hangman {
       switch(this.turns){
         case 5:
           console.log(this.turns)
-            document.getElementById("stool").style.display = "block";
-            break
-        case 4:
             document.getElementById("pole").style.display = "block";
             break
-        case 3:
+        case 4:
             document.getElementById("head").style.display = "block";
+            break
+        case 3:
+            document.getElementById("bbody").style.display = "block";
             break
         case 2:
           console.log(this.turns)
-            document.getElementById("bbody").style.display = "block";
+            document.getElementById("legs").style.display = "block";
             break
         case 1:
           console.log(this.turns)
-            document.getElementById("legs").style.display = "block";
+          document.getElementById("legs").style.display = "none";
+
+            document.getElementById("legs2").style.display = "block";
             break
         case 0:
           console.log(this.turns)

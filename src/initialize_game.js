@@ -59,7 +59,7 @@ document.querySelectorAll("#theme button").forEach((button) => {
 
     // hangman image
         document.getElementById("pole").style.display = "none"
-        document.getElementById("stool").style.display = "none"
+        document.getElementById("legs2").style.display = "none"
         // document.getElementById("rope").style.display = "none"
     document.getElementById("head").style.display = "none"
     document.getElementById("bbody").style.display = "none"
