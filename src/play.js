@@ -1,5 +1,8 @@
 const data = require("../words.json");
 
+
+
+
 class Hangman {
   constructor(word, list, globalTheme) {
     this.globalTheme = globalTheme;
@@ -56,14 +59,26 @@ class Hangman {
             break
         case 1:
           console.log(this.turns)
-          document.getElementById("legs").style.display = "none";
+          
+              const graphics = document.getElementById("hang-graphics");
+  graphics.classList.remove("animate__animated", "animate__shakeY");
+  void graphics.offsetWidth; // Force reflow
+  graphics.classList.add("animate__animated", "animate__shakeY");
+  document.getElementById("legs").style.display = "none";
 
             document.getElementById("legs2").style.display = "block";
+
             break
         case 0:
           console.log(this.turns)
-            document.getElementById("legs").style.display = "block";
-            break
+          case 0:
+  console.log(this.turns);
+  document.getElementById("legs").style.display = "block";
+
+  // Make the game container shake
+$("#hang-graphics").addClass("animate__animated animate__shakeY")
+
+  break;
         // case 5:
         //   console.log(this.turns)
         //     document.getElementById("kick-chair").style.display = "block";
