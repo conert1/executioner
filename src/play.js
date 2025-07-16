@@ -6,7 +6,7 @@ class Hangman {
     this.word = word;
     this.initListeners();
     this.list = list;
-    this.turns = 6;
+    this.turns = 7;
     this.match = false;
   }
 
@@ -37,30 +37,40 @@ class Hangman {
     if (this.match == false) {
       this.turns--;
       switch (this.turns) {
-        case 5:
-          console.log(this.turns);
+        case 6:
+          // console.log(this.turns);
           document.getElementById("pole").style.display = "block";
           break;
-        case 4:
+        case 5:
           document.getElementById("head").style.display = "block";
           break;
-        case 3:
+        case 4:
           document.getElementById("bbody").style.display = "block";
           break;
-        case 2:
+        case 3:
           console.log(this.turns);
           document.getElementById("legs").style.display = "block";
           break;
+        case 2:
+          document.getElementById("stool").style.display = "block";
+          break;
+
         case 1:
-          console.log(this.turns);
-
           const graphics = document.getElementById("hang-graphics");
-          graphics.classList.remove("animate__animated", "animate__shakeY");
-          void graphics.offsetWidth; // Force reflow
-          graphics.classList.add("animate__animated", "animate__shakeY");
-          document.getElementById("legs").style.display = "none";
+          const stool = document.getElementById("stool");
 
-          document.getElementById("legs2").style.display = "block";
+          graphics.classList.remove("animate__animated", "animate__shakeY");
+          void graphics.offsetWidth;
+          graphics.classList.add("animate__animated", "animate__shakeY");
+
+          stool.classList.remove("animate__fadeInUp");
+          stool.classList.add("animate__animated", "animate__hinge");
+
+          stool.addEventListener("animationend", function handleHingeEnd() {
+            stool.style.display = "none";
+            stool.removeEventListener("animationend", handleHingeEnd);
+          });
+
           break;
       }
       if (this.turns <= 1) {
