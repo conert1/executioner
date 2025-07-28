@@ -1,18 +1,18 @@
-body{
+body {
   text-align: center;
   height: 100vh;
 }
 
 #input {
-    display: grid;
-    gap: 8px;
-    padding: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-    font-family: sans-serif;
-  }
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
 
-  .row {
+.row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
   justify-content: center;
@@ -55,37 +55,23 @@ body{
     font-size: 12px;
   }
 
-  /* Remove row paddings for tighter layout */
   .row[style*="padding-left"] {
     padding-left: 0 !important;
   }
 
-}
 
+}
 
 #hang-graphics {
   display: flex;
   flex-direction: column;
-  align-items: center;   
-  justify-content: flex-start; 
+  align-items: center;
+  justify-content: flex-start;
   height: 60vh;
   padding-top: 30px;
   background-color: #f8f8f8;
   position: relative;
 }
-
-
-/* #stool {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  
-} */
 
 #legs2,
 #stool,
@@ -93,52 +79,79 @@ body{
 #rope,
 #head,
 #bbody,
-#legs{
-  /* display: block; */
-    /* Controls how big it gets on large screens */
-  width: 30vw;          /* Responsive scaling — 20% of the viewport width */
-  height: 10vh;         /* Keep aspect ratio */
-  margin: 0 auto;       /* Center horizontally */
-  padding-top: 0px; 
-  /* background-color: wheat; */
-  
+#legs {
+ 
+  width: 30vw; 
+  height: 10vh; /* Keep aspect ratio */
+  margin: 0 auto; /* Center horizontally */
+  padding-top: 0px;
 }
 
-/* #legs{
-width: 30vw;         
-  height: 10vh;         
-  margin: 0 auto;       
-  padding-top: -10px; 
-  margin-top: -0.5%;
-  background-color: wheat;
-  position: absolute;
-  
-} */
 
-  /* #stool {
-     
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background-color: #444;
-    }
+#pole {
+  background-image: url("../pics/rope.png");
+  background-size: cover;
+  background-position: center;
+  width: 40px;
+  height: 200px;
+}
 
-    #stool::before,
-    #stool::after {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      width: 4px;
-      height: 20px;
-      background-color: #444;
-    } */
+#head {
+  background-image: url("../pics/face.png");
+  background-size: cover;
+  background-position: center;
+  width: 180px;
+  height: 130px;
+}
 
-    /* #stool::before {
-      left: 0;
-    }
+#bbody {
+  background-image: url("../pics/mid.png");
+  background-size: cover;
+  background-position: center;
+  width: 180px;
+  height: 55px;
+}
 
-    #stool::after {
-      right: 0;
-    } */
+#legs{
+  background-image: url('../pics/legs.png');
+          background-size: cover;
+          background-position: center;
+          width: 140px;
+          height: 60px;
+}
+
+#stool{
+  background-image: url('../pics/stool.png');
+          background-size: cover;
+          background-position: center;
+          width: 140px;
+          height: 60px;
+}
+
+
+@media (max-width: 600px) {
+  #pole {
+    width: 20px;
+    height: 100px;
+  }
+
+  #head {
+    width: 90px;
+    height: 65px;
+  }
+
+  #bbody {
+    width: 90px;
+    height: 27.5px;
+  }
+
+  #legs {
+    width: 70px;
+    height: 30px;
+  }
+
+  #stool {
+    width: 70px;
+    height: 30px;
+  }
+}
