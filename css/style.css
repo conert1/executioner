@@ -1,6 +1,17 @@
 body {
   text-align: center;
   height: 100vh;
+  background-image: url("../pics/background.jpg");
+}
+
+#theme{
+  color: red;
+  margin-top: 5%;
+}
+button{
+  border-radius: 40%;
+  width: 30vh;
+  height: 20vh;
 }
 
 #input {
@@ -69,7 +80,7 @@ body {
   justify-content: flex-start;
   height: 60vh;
   padding-top: 30px;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   position: relative;
 }
 
