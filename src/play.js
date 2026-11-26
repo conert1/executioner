@@ -17,6 +17,53 @@ class Hangman {
     });
   }
 
+  
+
+   restartGame() {
+        // Reset game state
+        this.turns = 7;
+        this.match = false;
+
+        // Recreate the hidden word
+        this.list = [];
+
+        for (let i = 0; i < this.word.length; i++) {
+            if (this.word[i] === " ") {
+                this.list.push(" ");
+            } else {
+                this.list.push("_");
+            }
+        }
+
+        // Update displayed word
+        document.getElementById("play-area").innerHTML =
+            this.list.join("");
+
+        // Show game elements
+        document.getElementById("hang-graphics").style.display = "block";
+        document.getElementById("play-area").style.display = "block";
+        document.getElementById("global-theme").style.display = "block";
+        document.getElementById("input").style.display = "block";
+
+        // Reset hangman graphics
+        document.getElementById("pole").style.display = "none";
+        document.getElementById("stool").style.display = "none";
+        document.getElementById("head").style.display = "none";
+        document.getElementById("bbody").style.display = "none";
+        document.getElementById("legs").style.display = "none";
+
+        // Reset keyboard buttons
+        document.querySelectorAll(".key").forEach((key) => {
+            key.classList.remove("fade-out");
+        });
+
+        // Hide game over/won screens
+        document.getElementById("game-won").style.display = "none";
+        document.getElementById("game-lost").style.display = "none";
+    }
+
+    
+
   clickHandler(event) {
     const letter = event.target.textContent.toUpperCase();
 
@@ -97,6 +144,13 @@ class Hangman {
     document.getElementById("global-theme").style.display = "none";
     document.getElementById("input").style.display = "none";
   }
+
+  restartGame(){
+    document.getElementById("restart").addEventListener("click", () => {
+    window.currentHangmanGame.restartGame();
+});
+  }
+  
 }
 
 module.exports = { Hangman };

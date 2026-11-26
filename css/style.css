@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url("../pics/background.jpg");
 }
 
@@ -10,8 +10,8 @@ body {
 }
 button{
   border-radius: 40%;
-  width: 30vh;
-  height: 20vh;
+  width: 20vh;
+  height: 10vh;
 }
 
 #input {
