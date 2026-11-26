@@ -66,7 +66,14 @@ document.querySelectorAll("#theme button").forEach((button) => {
     document.getElementById("legs").style.display = "none"
     // document.getElementById("kick-chair").style.display = "none"
 
+    
   });
+
+       document.getElementById("restart").addEventListener("click", () => {
+    // window.currentHangmanGame.restartGame();
+    console.log("-------------------------------------------")
+    window.location.reload();
+});
 });
 
 module.exports = { initializePlay };

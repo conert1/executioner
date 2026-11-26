@@ -127,6 +127,7 @@ class Hangman {
       }
     }
     this.match = false;
+
   }
 
   gameWon() {
@@ -145,11 +146,15 @@ class Hangman {
     document.getElementById("input").style.display = "none";
   }
 
-  restartGame(){
+  restart(){
     document.getElementById("restart").addEventListener("click", () => {
-    window.currentHangmanGame.restartGame();
+    // window.currentHangmanGame.restartGame();
+    console.log("-------------------------------------------")
+    window.location.reload();
 });
   }
+
+  
   
 }
 
